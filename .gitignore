@@ -1,0 +1,17 @@
+# Gizli Ayarlar
+.env
+
+# Python Gereksizleri
+__pycache__/
+*.py[cod]
+Venv/
+
+# IDE Ayarları
+.idea/
+.vscode/
+
+# Derlenmiş Dosyalar
+*.exe
+dist/
+build/
+*.spec

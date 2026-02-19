@@ -1,0 +1,32 @@
+2025-07-06 23:41:39,899 - httpx - INFO - HTTP Request: GET https://epydvdcmmupwhpoqmvvj.supabase.co/rest/v1/stock_table?select=%2A&order=urun_adi.asc "HTTP/2 200 OK"
+2025-07-06 23:41:40,209 - httpx - INFO - HTTP Request: GET https://epydvdcmmupwhpoqmvvj.supabase.co/rest/v1/daily_orders?select=%2A&order_date=ilike.2025-07-06%25&order=created_at.desc "HTTP/2 404 Not Found"
+2025-07-06 23:41:40,211 - database_manager - ERROR - Bugünkü sipariþleri getirme iþlemi sýrasýnda hata oluþtu: {'message': 'operator does not exist: date ~~* unknown', 'code': '42883', 'hint': 'No operator matches the given name and argument types. You might need to add explicit type casts.', 'details': None}
+Traceback (most recent call last):
+  File "c:\Users\ufuki\OneDrive\Desktop\ERP_Project\database_manager.py", line 197, in get_today_orders
+    .execute()
+     ~~~~~~~^^
+  File "c:\Users\ufuki\OneDrive\Desktop\ERP_Project\Venv\Lib\site-packages\postgrest\_sync\request_builder.py", line 78, in execute
+    raise APIError(dict(json_obj))
+postgrest.exceptions.APIError: {'message': 'operator does not exist: date ~~* unknown', 'code': '42883', 'hint': 'No operator matches the given name and argument types. You might need to add explicit type casts.', 'details': None}
+2025-07-06 23:41:50,666 - root - ERROR - Veritabaný yükleme hatasý
+Traceback (most recent call last):
+  File "c:\Users\ufuki\OneDrive\Desktop\ERP_Project\database_manager.py", line 197, in get_today_orders
+    .execute()
+     ~~~~~~~^^
+  File "c:\Users\ufuki\OneDrive\Desktop\ERP_Project\Venv\Lib\site-packages\postgrest\_sync\request_builder.py", line 78, in execute
+    raise APIError(dict(json_obj))
+postgrest.exceptions.APIError: {'message': 'operator does not exist: date ~~* unknown', 'code': '42883', 'hint': 'No operator matches the given name and argument types. You might need to add explicit type casts.', 'details': None}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\ufuki\OneDrive\Desktop\ERP_Project\daily_orders_page.py", line 484, in load_orders_from_db
+    result = self.db.get_today_orders()
+  File "c:\Users\ufuki\OneDrive\Desktop\ERP_Project\database_manager.py", line 200, in get_today_orders
+    self._handle_error("Bugünkü sipariþleri getirme", e)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\ufuki\OneDrive\Desktop\ERP_Project\database_manager.py", line 22, in _handle_error
+    raise Exception(error_msg)
+Exception: Bugünkü sipariþleri getirme iþlemi sýrasýnda hata oluþtu: {'message': 'operator does not exist: date ~~* unknown', 'code': '42883', 'hint': 'No operator matches the given name and argument types. You might need to add explicit type casts.', 'details': None}
+2025-07-06 23:41:51,624 - httpx - INFO - HTTP Request: GET https://epydvdcmmupwhpoqmvvj.supabase.co/rest/v1/transactions?select=%2A&type=eq.income&order=tarih.desc "HTTP/2 200 OK"
+2025-07-06 23:41:52,398 - httpx - INFO - HTTP Request: GET https://epydvdcmmupwhpoqmvvj.supabase.co/rest/v1/transactions?select=%2A&type=eq.expense&order=tarih.desc "HTTP/2 200 OK"
