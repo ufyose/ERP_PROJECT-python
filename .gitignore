@@ -5,8 +5,7 @@
 __pycache__/
 *.py[cod]
 Venv/
-*.log  <-- Buraya ekledik
-
+*.log  
 
 # IDE Ayarları
 .idea/
