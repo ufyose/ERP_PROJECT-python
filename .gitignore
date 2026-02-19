@@ -5,6 +5,8 @@
 __pycache__/
 *.py[cod]
 Venv/
+*.log  <-- Buraya ekledik
+
 
 # IDE Ayarları
 .idea/
@@ -15,3 +17,5 @@ Venv/
 dist/
 build/
 *.spec
+# Veritabanı Dosyaları
+*.db
